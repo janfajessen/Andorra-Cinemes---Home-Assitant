@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Andorra Cinemes",
+        "description": "Cartelera i horaris del cinema d'Andorra."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Ja existeix una instància configurada."
+    }
+  }
+}

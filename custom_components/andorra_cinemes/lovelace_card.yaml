@@ -1,0 +1,37 @@
+
+# ============================================================
+# OPCIÓ B: Grid de picture-glance (stock HA, AMB imatges)
+# Usa els sensors individuals sensor.andorra_cinemes_film_1..N
+# ============================================================
+type: grid
+columns: 2
+square: false
+cards:
+  - type: picture-glance
+    entity: sensor.andorra_cinemes_film_1
+    title: >-
+      {{ state_attr('sensor.andorra_cinemes_film_1', 'title') }}
+    image: >-
+      {{ state_attr('sensor.andorra_cinemes_film_1', 'entity_picture') }}
+    entities:
+      - sensor.andorra_cinemes_film_1
+    hold_action:
+      action: url
+      url_path: >-
+        {{ state_attr('sensor.andorra_cinemes_film_1', 'film_page_url') }}
+
+  - type: picture-glance
+    entity: sensor.andorra_cinemes_film_2
+    title: >-
+      {{ state_attr('sensor.andorra_cinemes_film_2', 'title') }}
+    image: >-
+      {{ state_attr('sensor.andorra_cinemes_film_2', 'entity_picture') }}
+    entities:
+      - sensor.andorra_cinemes_film_2
+    hold_action:
+      action: url
+      url_path: >-
+        {{ state_attr('sensor.andorra_cinemes_film_2', 'film_page_url') }}
+
+  # Afegeix tants com films hi hagi (film_3, film_4, etc.)
+
