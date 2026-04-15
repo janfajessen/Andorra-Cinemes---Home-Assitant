@@ -1,11 +1,20 @@
-# 🎬 Andorra Cinemes per a Home Assistant
-
 <div align="center">
 
-![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.2+-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)
-![Versió](https://img.shields.io/badge/versió-1.1.0-green?style=for-the-badge)
-![Llicència](https://img.shields.io/badge/llicència-MIT-blue?style=for-the-badge)
-![Andorra](https://img.shields.io/badge/🇦🇩-Andorra-orange?style=for-the-badge)
+# Andorra Cinemes <br> Home Assistant Integration
+
+<img src="brands/icon@2x.png" width="250"/>
+
+![Version](https://img.shields.io/badge/version-1.5.24-blue?style=for-the-badge)
+![HA](https://img.shields.io/badge/Home%20Assistant-2024.1+-orange?style=for-the-badge&logo=home-assistant)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python)
+![HACS](https://img.shields.io/badge/HACS-Custom-41BDF5?style=for-the-badge&logo=homeassistantcommunitystore&logoColor=white)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/janfajessen)
+[![Patreon](https://img.shields.io/badge/Patreon-Support-red?style=for-the-badge&logo=patreon)](https://www.patreon.com/janfajessen)
+<!--[![Ko-Fi](https://img.shields.io/badge/Ko--Fi-Support-teal?style=for-the-badge&logo=ko-fi)](https://ko-fi.com/janfajessen)
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Support-pink?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/janfajessen)
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?style=for-the-badge&logo=paypal)](https://paypal.me/janfajessen)-->
+
 
 **Integració no oficial per als Cinemes Illa Carlemany d'Andorra**
 
@@ -17,6 +26,113 @@ Cartellera en temps real · Horaris · Pòsters · Sinopsis · Tràilers
 
 </div>
 
+<details>
+<summary>🇪🇸 Español</summary>
+
+## Andorra Cinemes para Home Assistant
+
+Integración no oficial para los Cines Illa Carlemany de Andorra. Muestra la cartelera actual, horarios, pósters, sinopsis y tráilers directamente en Home Assistant.
+
+### Instalación
+1. Copia la carpeta `andorra_cinemes` a `/config/custom_components/`
+2. Reinicia Home Assistant
+3. Ve a **Configuración → Integraciones → Añadir integración**
+4. Busca **"Andorra Cinemes"**
+<img src="brands/icon@2x.png" width="100"/>
+
+### Sensores creados
+- `sensor.andorra_cinemes_en_cartell` — Cartelera actual
+- `sensor.andorra_cinemes_film_1` ... `film_20` — Sensores individuales por película
+- `sensor.andorra_cinemes_proximes_estrenes` — Próximos estrenos
+
+### Configuración
+Edita `const.py` para ajustar el intervalo de actualización:
+```python
+SCAN_INTERVAL_MINUTES = 1440  # 24 horas (recomendado)
+```
+
+</details>
+
+<details>
+<summary>🇫🇷 Français</summary>
+
+## Andorra Cinemes pour Home Assistant
+
+Intégration non officielle pour les Cinémas Illa Carlemany d'Andorre. Affiche la programmation actuelle, les horaires, les affiches, les synopsis et les bandes-annonces directement dans Home Assistant.
+
+### Installation
+1. Copiez le dossier `andorra_cinemes` dans `/config/custom_components/`
+2. Redémarrez Home Assistant
+3. Allez dans **Paramètres → Intégrations → Ajouter une intégration**
+4. Recherchez **"Andorra Cinemes"**
+<img src="brands/icon@2x.png" width="100"/>
+
+### Capteurs créés
+- `sensor.andorra_cinemes_en_cartell` — Programme actuel
+- `sensor.andorra_cinemes_film_1` ... `film_20` — Capteurs individuels par film
+- `sensor.andorra_cinemes_proximes_estrenes` — Prochaines sorties
+
+### Configuration
+Éditez `const.py` pour ajuster l'intervalle de mise à jour :
+```python
+SCAN_INTERVAL_MINUTES = 1440  # 24 heures (recommandé)
+```
+
+</details>
+
+<details>
+<summary>🇬🇧 English</summary>
+
+## Andorra Cinemes for Home Assistant
+
+Unofficial integration for the Cinemes Illa Carlemany cinema in Andorra. Displays the current billboard, showtimes, posters, synopses and trailers directly in Home Assistant.
+
+### Installation
+1. Copy the `andorra_cinemes` folder to `/config/custom_components/`
+2. Restart Home Assistant
+3. Go to **Settings → Integrations → Add Integration**
+4. Search for **"Andorra Cinemes"**
+<img src="brands/icon@2x.png" width="100"/>
+
+### Created sensors
+- `sensor.andorra_cinemes_en_cartell` — Current billboard
+- `sensor.andorra_cinemes_film_1` ... `film_20` — Individual sensors per film
+- `sensor.andorra_cinemes_proximes_estrenes` — Upcoming releases
+
+### Configuration
+Edit `const.py` to adjust the update interval:
+```python
+SCAN_INTERVAL_MINUTES = 1440  # 24 hours (recommended)
+```
+
+</details>
+
+<details>
+<summary>🇵🇹 Português</summary>
+
+## Andorra Cinemes para Home Assistant
+
+Integração não oficial para o Cinema Illa Carlemany de Andorra. Mostra a programação atual, horários, cartazes, sinopses e trailers diretamente no Home Assistant.
+
+### Instalação
+1. Copie a pasta `andorra_cinemes` para `/config/custom_components/`
+2. Reinicie o Home Assistant
+3. Vá a **Configurações → Integrações → Adicionar integração**
+4. Pesquise **"Andorra Cinemes"**
+<img src="brands/icon@2x.png" width="100"/>
+
+### Sensores criados
+- `sensor.andorra_cinemes_en_cartell` — Programação atual
+- `sensor.andorra_cinemes_film_1` ... `film_20` — Sensores individuais por filme
+- `sensor.andorra_cinemes_proximes_estrenes` — Próximas estreias
+
+### Configuração
+Edite `const.py` para ajustar o intervalo de atualização:
+```python
+SCAN_INTERVAL_MINUTES = 1440  # 24 horas (recomendado)
+```
+
+</details>
 ---
 
 ## ✨ Característiques
@@ -44,6 +160,7 @@ Cartellera en temps real · Horaris · Pòsters · Sinopsis · Tràilers
 2. Reinicia Home Assistant
 3. Ves a **Configuració → Integracions → Afegeix integració**
 4. Cerca **"Andorra Cinemes"** i fes clic a **Configurar**
+<img src="brands/icon@2x.png" width="100"/>
 
 ```
 config/
@@ -291,106 +408,3 @@ MIT © 2026
 
 ---
 
-<details>
-<summary>🇪🇸 Español</summary>
-
-## Andorra Cinemes para Home Assistant
-
-Integración no oficial para los Cines Illa Carlemany de Andorra. Muestra la cartelera actual, horarios, pósters, sinopsis y tráilers directamente en Home Assistant.
-
-### Instalación
-1. Copia la carpeta `andorra_cinemes` a `/config/custom_components/`
-2. Reinicia Home Assistant
-3. Ve a **Configuración → Integraciones → Añadir integración**
-4. Busca **"Andorra Cinemes"**
-
-### Sensores creados
-- `sensor.andorra_cinemes_en_cartell` — Cartelera actual
-- `sensor.andorra_cinemes_film_1` ... `film_20` — Sensores individuales por película
-- `sensor.andorra_cinemes_proximes_estrenes` — Próximos estrenos
-
-### Configuración
-Edita `const.py` para ajustar el intervalo de actualización:
-```python
-SCAN_INTERVAL_MINUTES = 1440  # 24 horas (recomendado)
-```
-
-</details>
-
-<details>
-<summary>🇫🇷 Français</summary>
-
-## Andorra Cinemes pour Home Assistant
-
-Intégration non officielle pour les Cinémas Illa Carlemany d'Andorre. Affiche la programmation actuelle, les horaires, les affiches, les synopsis et les bandes-annonces directement dans Home Assistant.
-
-### Installation
-1. Copiez le dossier `andorra_cinemes` dans `/config/custom_components/`
-2. Redémarrez Home Assistant
-3. Allez dans **Paramètres → Intégrations → Ajouter une intégration**
-4. Recherchez **"Andorra Cinemes"**
-
-### Capteurs créés
-- `sensor.andorra_cinemes_en_cartell` — Programme actuel
-- `sensor.andorra_cinemes_film_1` ... `film_20` — Capteurs individuels par film
-- `sensor.andorra_cinemes_proximes_estrenes` — Prochaines sorties
-
-### Configuration
-Éditez `const.py` pour ajuster l'intervalle de mise à jour :
-```python
-SCAN_INTERVAL_MINUTES = 1440  # 24 heures (recommandé)
-```
-
-</details>
-
-<details>
-<summary>🇬🇧 English</summary>
-
-## Andorra Cinemes for Home Assistant
-
-Unofficial integration for the Cinemes Illa Carlemany cinema in Andorra. Displays the current billboard, showtimes, posters, synopses and trailers directly in Home Assistant.
-
-### Installation
-1. Copy the `andorra_cinemes` folder to `/config/custom_components/`
-2. Restart Home Assistant
-3. Go to **Settings → Integrations → Add Integration**
-4. Search for **"Andorra Cinemes"**
-
-### Created sensors
-- `sensor.andorra_cinemes_en_cartell` — Current billboard
-- `sensor.andorra_cinemes_film_1` ... `film_20` — Individual sensors per film
-- `sensor.andorra_cinemes_proximes_estrenes` — Upcoming releases
-
-### Configuration
-Edit `const.py` to adjust the update interval:
-```python
-SCAN_INTERVAL_MINUTES = 1440  # 24 hours (recommended)
-```
-
-</details>
-
-<details>
-<summary>🇵🇹 Português</summary>
-
-## Andorra Cinemes para Home Assistant
-
-Integração não oficial para o Cinema Illa Carlemany de Andorra. Mostra a programação atual, horários, cartazes, sinopses e trailers diretamente no Home Assistant.
-
-### Instalação
-1. Copie a pasta `andorra_cinemes` para `/config/custom_components/`
-2. Reinicie o Home Assistant
-3. Vá a **Configurações → Integrações → Adicionar integração**
-4. Pesquise **"Andorra Cinemes"**
-
-### Sensores criados
-- `sensor.andorra_cinemes_en_cartell` — Programação atual
-- `sensor.andorra_cinemes_film_1` ... `film_20` — Sensores individuais por filme
-- `sensor.andorra_cinemes_proximes_estrenes` — Próximas estreias
-
-### Configuração
-Edite `const.py` para ajustar o intervalo de atualização:
-```python
-SCAN_INTERVAL_MINUTES = 1440  # 24 horas (recomendado)
-```
-
-</details>
