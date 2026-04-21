@@ -4,7 +4,7 @@
 
 <img src="brands/icon@2x.png" width="250"/>
 
-![Version](https://img.shields.io/badge/version-1.5.24-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.4.4-blue?style=for-the-badge)
 ![HA](https://img.shields.io/badge/Home%20Assistant-2024.1+-orange?style=for-the-badge&logo=home-assistant)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python)
