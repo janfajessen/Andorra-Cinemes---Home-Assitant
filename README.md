@@ -51,6 +51,13 @@ Edita `const.py` para ajustar el intervalo de actualización:
 SCAN_INTERVAL_MINUTES = 1440  # 24 horas (recomendado)
 ```
 
+*Si esta integración te resulta útil, considera darle una estrella ⭐ en GitHub.*
+O considera apoyar su desarrollo
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow?style=for-the-badge&logo=buymeacoffee)
+](https://www.buymeacoffee.com/janfajessen) 
+[![Patreon](https://img.shields.io/badge/Patreon-Support-red?style=for-the-badge&logo=patreon)](https://www.patreon.com/janfajessen)
+</div>
+
 </details>
 
 <details>
@@ -77,6 +84,13 @@ Intégration non officielle pour les Cinémas Illa Carlemany d'Andorre. Affiche 
 ```python
 SCAN_INTERVAL_MINUTES = 1440  # 24 heures (recommandé)
 ```
+
+*Si cette intégration vous est utile, n'hésitez pas à lui attribuer une étoile sur GitHub.* 
+Vous pouvez également soutenir son développement
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow?style=for-the-badge&logo=buymeacoffee)
+](https://www.buymeacoffee.com/janfajessen) 
+[![Patreon](https://img.shields.io/badge/Patreon-Support-red?style=for-the-badge&logo=patreon)](https://www.patreon.com/janfajessen)
+</div>
 
 </details>
 
@@ -105,6 +119,14 @@ Edit `const.py` to adjust the update interval:
 SCAN_INTERVAL_MINUTES = 1440  # 24 hours (recommended)
 ```
 
+*If this integration is useful to you, consider giving it a ⭐ on GitHub.*
+Or consider supporting development!
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow?style=for-the-badge&logo=buymeacoffee)
+](https://www.buymeacoffee.com/janfajessen) 
+[![Patreon](https://img.shields.io/badge/Patreon-Support-red?style=for-the-badge&logo=patreon)](https://www.patreon.com/janfajessen)
+</div>
+
 </details>
 
 <details>
@@ -132,7 +154,16 @@ Edite `const.py` para ajustar o intervalo de atualização:
 SCAN_INTERVAL_MINUTES = 1440  # 24 horas (recomendado)
 ```
 
+*Se esta integração for útil para você, considere dar uma ⭐ no GitHub.*
+Ou considere apoiar o desenvolvimento!
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow?style=for-the-badge&logo=buymeacoffee)
+](https://www.buymeacoffee.com/janfajessen) 
+[![Patreon](https://img.shields.io/badge/Patreon-Support-red?style=for-the-badge&logo=patreon)](https://www.patreon.com/janfajessen)
+</div>
+
+
 </details>
+
 ---
 
 ## ✨ Característiques
@@ -397,6 +428,15 @@ cinemesilla.com (1 petició GET)
 ```
 
 ---
+
+*Si aquesta integració es util per a tu, considera donar-li una ⭐ a GitHub.*
+O considera donar suport pel desenvolupament
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow?style=for-the-badge&logo=buymeacoffee)
+](https://www.buymeacoffee.com/janfajessen) 
+[![Patreon](https://img.shields.io/badge/Patreon-Support-red?style=for-the-badge&logo=patreon)](https://www.patreon.com/janfajessen)
+</div>
+
 
 ## 🤝 Contribucions
 
