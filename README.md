@@ -2,7 +2,7 @@
 
 # Andorra Cinemes <br> Home Assistant Integration
 
-<img src="brands/icon@2x.png" width="250"/>
+<img src="https://github.com/janfajessen/Andorra-Cinemes---Home-Assitant/blob/fc6dab7eb69a92f1376e74edaaf9632abd8dc368/brand/icon%402x.png" width="350"/>
 
 ![Version](https://img.shields.io/badge/version-1.4.4-blue?style=for-the-badge)
 ![HA](https://img.shields.io/badge/Home%20Assistant-2024.1+-orange?style=for-the-badge&logo=home-assistant)
@@ -38,7 +38,7 @@ Integración no oficial para los Cines Illa Carlemany de Andorra. Muestra la car
 2. Reinicia Home Assistant
 3. Ve a **Configuración → Integraciones → Añadir integración**
 4. Busca **"Andorra Cinemes"**
-<img src="brands/icon@2x.png" width="100"/>
+<img src="https://github.com/janfajessen/Andorra-Cinemes---Home-Assitant/blob/fc6dab7eb69a92f1376e74edaaf9632abd8dc368/brand/icon%402x.png" width="100"/>
 
 ### Sensores creados
 - `sensor.andorra_cinemes_en_cartell` — Cartelera actual
@@ -72,7 +72,7 @@ Intégration non officielle pour les Cinémas Illa Carlemany d'Andorre. Affiche 
 2. Redémarrez Home Assistant
 3. Allez dans **Paramètres → Intégrations → Ajouter une intégration**
 4. Recherchez **"Andorra Cinemes"**
-<img src="brands/icon@2x.png" width="100"/>
+<img src="https://github.com/janfajessen/Andorra-Cinemes---Home-Assitant/blob/fc6dab7eb69a92f1376e74edaaf9632abd8dc368/brand/icon%402x.png" width="100"/>
 
 ### Capteurs créés
 - `sensor.andorra_cinemes_en_cartell` — Programme actuel
@@ -106,7 +106,7 @@ Unofficial integration for the Cinemes Illa Carlemany cinema in Andorra. Display
 2. Restart Home Assistant
 3. Go to **Settings → Integrations → Add Integration**
 4. Search for **"Andorra Cinemes"**
-<img src="brands/icon@2x.png" width="100"/>
+<img src="https://github.com/janfajessen/Andorra-Cinemes---Home-Assitant/blob/fc6dab7eb69a92f1376e74edaaf9632abd8dc368/brand/icon%402x.png" width="100"/>
 
 ### Created sensors
 - `sensor.andorra_cinemes_en_cartell` — Current billboard
@@ -141,7 +141,7 @@ Integração não oficial para o Cinema Illa Carlemany de Andorra. Mostra a prog
 2. Reinicie o Home Assistant
 3. Vá a **Configurações → Integrações → Adicionar integração**
 4. Pesquise **"Andorra Cinemes"**
-<img src="brands/icon@2x.png" width="100"/>
+<img src="https://github.com/janfajessen/Andorra-Cinemes---Home-Assitant/blob/fc6dab7eb69a92f1376e74edaaf9632abd8dc368/brand/icon%402x.png" width="100"/>
 
 ### Sensores criados
 - `sensor.andorra_cinemes_en_cartell` — Programação atual
@@ -191,7 +191,7 @@ Ou considere apoiar o desenvolvimento!
 2. Reinicia Home Assistant
 3. Ves a **Configuració → Integracions → Afegeix integració**
 4. Cerca **"Andorra Cinemes"** i fes clic a **Configurar**
-<img src="brands/icon@2x.png" width="100"/>
+<img src="https://github.com/janfajessen/Andorra-Cinemes---Home-Assitant/blob/fc6dab7eb69a92f1376e74edaaf9632abd8dc368/brand/icon%402x.png" width="100"/>
 
 ```
 config/
@@ -262,37 +262,37 @@ Sensors individuals per a cada pel·lícula. Inclouen:
 
 ```yaml
 type: markdown
+title: Pel·licules a Cinemes Illa Carlemany
 content: >
-  {% set films = state_attr('sensor.andorra_cinemes_en_cartell', 'films') %}
-  {% if films %}
-  {% set films = films | selectattr('on_advance', 'eq', false) | list | sort(attribute='release_date', reverse=true) %}
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:4px">
-  {% for f in films %}
-  {% set extra = namespace(synopsis='', trailer='') %}
-  {% for i in range(1, 21) %}
+  {% set films = state_attr('sensor.andorra_cinemes_en_cartell', 'films') %} {%
+  if films %} {% set films = films | selectattr('on_advance', 'eq', false) |
+  list | sort(attribute='release_date', reverse=true) %} <div
+  style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:4px">
+  {% for f in films %} {% set extra = namespace(synopsis='', trailer='') %} {%
+  for i in range(1, 21) %}
     {% if state_attr('sensor.andorra_cinemes_film_' ~ i, 'title') == f.title %}
       {% set extra.synopsis = state_attr('sensor.andorra_cinemes_film_' ~ i, 'synopsis') %}
       {% set extra.trailer = state_attr('sensor.andorra_cinemes_film_' ~ i, 'trailer_url') %}
     {% endif %}
-  {% endfor %}
-  <div style="text-align:center">
-  <a href="{{ f.film_page_url }}" target="_blank">
-  <img src="{{ f.poster_url }}" style="width:100%;border-radius:6px;display:block">
-  </a>
-  <div style="font-size:11px;font-weight:bold;margin-top:4px"><b>{{ f.title }}</b></div>
-  <div style="font-size:10px;color:var(--secondary-text-color)">{{ f.genre }} · {{ f.rating }} · {{ f.duration }}min</div>
-  <div style="font-size:10px;color:var(--primary-color)"><b>{{ f.showtimes_today | join(' · ') }}</b></div>
-  <div style="font-size:9px;color:var(--secondary-text-color);margin-top:4px;text-align:left"><small><small>{{ extra.synopsis }}</small></small></div>
-  {% if extra.trailer and extra.trailer != '-' %}
-  <a href="{{ extra.trailer | replace('embed/', 'watch?v=') }}" target="_blank" style="display:flex;align-items:center;gap:4px;margin-top:4px;text-decoration:none">
-  <img src="https://img.youtube.com/vi/{{ extra.trailer.split('/')[-1] }}/mqdefault.jpg" style="width:60px;height:40px;object-fit:cover;border-radius:4px">
-  <img src="/local/Youtube_logo.png" style="max-width:24px;max-height:16px;object-fit:contain">
-  </a>
-  {% endif %}
-  </div>
-  {% endfor %}
-  </div>
-  {% endif %}
+  {% endfor %} <div style="text-align:center"> <a href="{{ f.film_page_url }}"
+  target="_blank"> <img src="{{ f.poster_url }}"
+  style="width:100%;border-radius:6px;display:block"> </a> <div
+  style="font-size:11px;font-weight:bold;margin-top:4px"><b>{{ f.title
+  }}</b></div> <div style="font-size:10px;color:var(--secondary-text-color)">{{
+  f.genre }} · {{ f.rating }} · {{ f.duration }}min</div> <div
+  style="font-size:10px;color:var(--primary-color)"><b>{{ f.showtimes_today |
+  join(' · ') }}</b></div> <div
+  style="font-size:9px;color:var(--secondary-text-color);margin-top:4px;text-align:left"><small><small>{{
+  extra.synopsis }}</small></small></div> {% if extra.trailer and extra.trailer
+  != '-' %} <a href="{{ extra.trailer | replace('embed/', 'watch?v=') }}"
+  target="_blank" style="display:block;position:relative;margin-top:4px"> <img
+  src="https://img.youtube.com/vi/{{ extra.trailer.split('/')[-1]
+  }}/mqdefault.jpg"
+  style="width:50%;height:30px;object-fit:cover;border-radius:4px"> <span
+  style="position:absolute;top:4px;right:4px;background:red;color:white;border-radius:4px;padding:2px
+  6px;font-size:10px">📼</span> </a> {% endif %} </div> {% endfor %} </div> {%
+  endif %}
+
 ```
 
 ### Pròximes estrenes (grid de 2 columnes)
@@ -304,20 +304,142 @@ square: false
 cards:
   - type: markdown
     content: >
-      {% set upcoming = state_attr('sensor.andorra_cinemes_proximes_estrenes', 'upcoming_films') %}
-      {% for f in upcoming[0::2] %}
-      <img src="{{ f.poster_url }}" style="width:100%;border-radius:4px">
-      <div style="font-size:9px;font-weight:bold">{{ f.title }}</div>
-      <div style="font-size:8px;color:var(--secondary-text-color)">{{ f.release_date }}</div>
-      {% endfor %}
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[0] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
   - type: markdown
     content: >
-      {% set upcoming = state_attr('sensor.andorra_cinemes_proximes_estrenes', 'upcoming_films') %}
-      {% for f in upcoming[1::2] %}
-      <img src="{{ f.poster_url }}" style="width:100%;border-radius:4px">
-      <div style="font-size:9px;font-weight:bold">{{ f.title }}</div>
-      <div style="font-size:8px;color:var(--secondary-text-color)">{{ f.release_date }}</div>
-      {% endfor %}
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[1] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[2] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[3] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[4] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[5] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[6] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[7] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[8] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[9] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}<b/></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[10] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[11] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[12] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[13] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[14] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[15] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+  - type: markdown
+    content: >
+      {% set f = state_attr('sensor.andorra_cinemes_proximes_estrenes',
+      'upcoming_films')[16] %} <img src="{{ f.poster_url }}"
+      style="width:100%;border-radius:4px"> <div style="font-size:10px"><b>{{
+      f.title }}</b></div> <div
+      style="font-size:9px;color:var(--secondary-text-color)">{{ f.release_date
+      }}</div>
+title: Próximos Estrenos
+
 ```
 
 ---
