@@ -3,6 +3,7 @@
   "name": "Andorra Cinemes",
   "version": "1.1.0",
   "documentation": "https://github.com/janfajessen/Andorra-Cinemes---Home-Assitant",
+  "issue_tracker": "https://github.com/janfajessen/Andorra-Cinemes---Home-Assitant/issues",
   "dependencies": [],
   "codeowners": [],
   "requirements": ["beautifulsoup4>=4.12.0"],
