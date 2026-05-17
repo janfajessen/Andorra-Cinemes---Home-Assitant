@@ -2,7 +2,7 @@
   "domain": "andorra_cinemes",
   "name": "Andorra Cinemes",
   "version": "1.1.0",
-  "documentation": "https://cinemesilla.com",
+  "documentation": "https://github.com/janfajessen/Andorra-Cinemes---Home-Assitant",
   "dependencies": [],
   "codeowners": [],
   "requirements": ["beautifulsoup4>=4.12.0"],
